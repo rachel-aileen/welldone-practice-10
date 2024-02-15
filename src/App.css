@@ -1,5 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+
 body {
-  background-color: pink;
+  background-color: white;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --primary-color: #122223;
+  --secondary-color: #F6F2F2;
+  --tertiary-color: #81B59F;
+  --accent-color: #F2FEDC;
+  --attention-color: #E03D5A;
+  --neutral-color: #F0C7B9;
+}
+
+
+/* Navbar */
+
+.navbar {
+  height: 12vh;
+  background-color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: var(--primary-color);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 1.9em;
+  letter-spacing: 4px;
+}
+
+.navbar .navigation .menu {
+  position: fixed;
+  background-color: var(--tertiary-color);
+  transition: 1s ease all;
+  top: 12vh;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+.navbar .navigation .menu.active {
+  right: 0;
+}
+
+.navbar .navigation .menu.hidden {
+  right: -120%;
+}
+
+.navbar .navigation .menu .menuItem a {
+  color: var(--secondary-color);
 }
