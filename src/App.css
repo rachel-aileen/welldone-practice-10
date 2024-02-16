@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 body {
   background-color: var(--primary-color);
@@ -70,7 +70,7 @@ body {
 
 
 /* Content */
-.contentOverview {
+.introContent {
   display: block;
   align-items: center;
   justify-content: center;
@@ -78,9 +78,10 @@ body {
   padding-right: 25%;
   text-align: left;
   direction: column;
+  margin-top: 8%;
 }
 
-.contentOverview .heading {
+.introContent .heading {
   color: var(--accent-color);
   font-size: 6em;
   font-family: 'Spectral';
@@ -89,11 +90,19 @@ body {
 
 }
 
-.contentOverview .subheading {
+.introContent .subheading {
   color: var(--secondary-color);
   font-size: 2.5em;
   font-family: 'Spectral';
   font-weight: 200;
   margin: 0;
+  margin-bottom: 3%;
+}
 
+.introContent .mainText {
+  color: var(--secondary-color);
+  font-size: 1.2em;
+  font-family: 'Nunito Sans';
+  font-weight: 500;
+  margin: 0;
 }
