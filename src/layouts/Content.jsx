@@ -1,5 +1,6 @@
 import { Container, Typography } from '@mui/material'
 import React from 'react'
+import PageSelector from '../PageSelector'
 
 export default function Content() {
     return (
@@ -18,8 +19,14 @@ export default function Content() {
                     reflect the final cost.
                 </p>
 
+                <PageSelector />
+
 
             </Container>
+
+
+
+
 
 
 
