@@ -1,13 +1,16 @@
+import { Container, Typography } from '@mui/material'
 import React from 'react'
-import PageSelect from '../PageSelect'
 
 export default function Content() {
     return (
         <div>
 
 
-            <div className='introContent' >
-                <h1 className='heading'>We believe in transparency</h1>
+            <Container maxWidth='md' className='introContent'>
+
+                <Typography className='heading'  > We believe in transparency.</Typography>
+
+                {/* <h1 className='heading'>We believe in transparency</h1> */}
                 <h6 className='subheading'>Want a price estimate?</h6>
                 <p className='mainText' >
                     Get it below.
@@ -15,8 +18,9 @@ export default function Content() {
                     reflect the final cost.
                 </p>
 
-                <PageSelect />
-            </div>
+
+            </Container>
+
 
 
         </div>
