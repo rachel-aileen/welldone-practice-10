@@ -1,5 +1,7 @@
 
 import './App.css';
+import Test from './Test';
+import Content from './layouts/Content';
 import Navbar from './layouts/Navbar';
 
 
@@ -8,6 +10,8 @@ function App() {
     <div>
 
       <Navbar />
+
+      <Content />
 
 
     </div>

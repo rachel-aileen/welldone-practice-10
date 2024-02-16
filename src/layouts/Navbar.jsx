@@ -8,10 +8,7 @@ export default function Navbar() {
 
     const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-
-
     const toggleMenu = () => setIsMenuVisible(!isMenuVisible);
-
 
 
     return (
