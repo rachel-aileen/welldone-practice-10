@@ -49,17 +49,50 @@ export default function PageSelector() {
                 <TextField
                     required
                     type="number"
-                    InputProps={{ inputProps: { min: 1, step: 1 } }} // Only allow whole numbers greater than zero
+                    InputProps={{
+                        inputProps: { min: 1, step: 1 }, // Only allow whole numbers greater than zero
+                        disableUnderline: true, // Removes the underline
+                        style: {
+                            '&:hover': {
+                                borderColor: 'transparent', // Removes border on hover
+                            },
+                            '&:focus': {
+                                borderColor: 'transparent', // Removes border on focus
+                            },
+                            '&:after': {
+                                borderColor: 'transparent', // Removes border after (when active/focused)
+                            },
+                            '&:before': {
+                                borderColor: 'transparent', // Removes border before (initial state)
+                            },
+                        },
+                    }}
                     id="number-of-pages"
                     value={age}
                     onChange={handleChange}
                     sx={{
-                        '& .MuiInputBase-input': { color: '#F6F2F2' }, // Input text color
-                        '& .MuiInput-underline:before, .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                            borderBottom: 'none'
+                        '& .MuiInputBase-input': {
+                            color: '#F6F2F2', // Input text color
+                        },
+                        '& .MuiInput-underline:before, .MuiInput-underline:after': {
+                            borderBottom: 'none',
+                        },
+                        '& .MuiOutlinedInput-root': {
+                            '& fieldset': {
+                                borderColor: 'transparent', // Removes default border
+                            },
+                            '&:hover fieldset': {
+                                borderColor: 'transparent', // Removes border on hover
+                            },
+                            '&.Mui-focused fieldset': {
+                                borderColor: 'transparent', // Removes border on focus
+                            },
                         },
                     }}
                 />
+
+
+
             </FormControl>
         </Box>
     );
