@@ -116,12 +116,15 @@ body {
   font-size: clamp(1.2rem, 6vw, 1.3rem);
   font-family: 'Nunito Sans';
   font-weight: 400;
-  margin-bottom: 8%;
+  margin-bottom: 12%;
 }
 
 .inputLabel {
   font-family: 'Nunito Sans' !important;
   font-weight: 400 !important;
   font-size: clamp(1.2rem, 6vw, 1.3rem) !important;
+}
 
+.boxOutline {
+  margin-bottom: 12% !important;
 }

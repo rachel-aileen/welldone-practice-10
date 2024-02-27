@@ -3,9 +3,9 @@ import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField'; // Import TextField
 import { Box, Stack, Typography } from '@mui/material';
-import { FilterVintage, Padding } from '@mui/icons-material';
+import { FilterVintage } from '@mui/icons-material';
 
-export default function PageSelector() {
+export default function ServicesSelector() {
     const [age, setAge] = React.useState('');
 
     const handleChange = (event) => {
@@ -15,15 +15,11 @@ export default function PageSelector() {
     };
 
     return (
-        <Box
-            className='boxOutline'
-            sx={{
-                m: 1,
-                width: '100%',
-                borderBottom: '2px solid #F6F2F2;'
-
-
-            }}
+        <Box sx={{
+            m: 1,
+            width: '100%',
+            borderBottom: '2px solid #F6F2F2;'
+        }}
         >
             <FormControl variant="standard"
                 sx={{
@@ -49,7 +45,7 @@ export default function PageSelector() {
                         spacing={2}
                     >
                         <FilterVintage sx={{ color: '#E03D5A' }} />
-                        <Typography className='inputLabel'>How many pages will your website have?</Typography>
+                        <Typography className='inputLabel'>Select any additional services you'd like:</Typography>
                     </Stack>
                 </InputLabel>
                 <TextField
@@ -94,7 +90,6 @@ export default function PageSelector() {
                                 borderColor: 'transparent', // Removes border on focus
                             },
                         },
-
                     }}
                 />
 

@@ -1,6 +1,7 @@
 import { Container, Typography } from '@mui/material'
 import React from 'react'
 import PageSelector from '../PageSelector'
+import ServicesSelector from '../ServicesSelector'
 
 export default function Content() {
     return (
@@ -20,6 +21,8 @@ export default function Content() {
                 </p>
 
                 <PageSelector />
+
+                <ServicesSelector />
 
 
             </Container>
