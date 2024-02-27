@@ -1,10 +1,9 @@
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField'; // Import TextField
 import { Box, Stack, Typography } from '@mui/material';
-import { AcUnit, AssistWalker, AutoAwesome, FilterVintage } from '@mui/icons-material';
+import { FilterVintage } from '@mui/icons-material';
 
 export default function PageSelector() {
     const [age, setAge] = React.useState('');
@@ -14,17 +13,14 @@ export default function PageSelector() {
     };
 
     return (
-        <Box sx=
-            {{
-                m: 1,
-                width: '100%',
-                borderBottom: '2px solid #F6F2F2;'
-            }}
+        <Box sx={{
+            m: 1,
+            width: '100%',
+            borderBottom: '2px solid #F6F2F2;'
+        }}
         >
             <FormControl variant="standard"
-                sx=
-                {{
-
+                sx={{
                     width: '100%',
                     '.MuiInput-underline:before, .MuiInput-underline:after': { display: 'none' }
                 }}>
@@ -50,34 +46,20 @@ export default function PageSelector() {
                         <Typography className='inputLabel'>How many pages will your website have?</Typography>
                     </Stack>
                 </InputLabel>
-
-
-
-                <Select
+                <TextField
                     required
-                    labelId="demo-simple-select-standard-label"
-                    id="demo-simple-select-standard"
+                    type="number"
+                    InputProps={{ inputProps: { min: 1, step: 1 } }} // Only allow whole numbers greater than zero
+                    id="number-of-pages"
                     value={age}
                     onChange={handleChange}
-                    label="Age"
-
                     sx={{
-                        color: '#F6F2F2',
-                        '& .MuiSvgIcon-root': { color: '#F6F2F2' }, // Dropdown icon color
-                        // Hide the default underline
+                        '& .MuiInputBase-input': { color: '#F6F2F2' }, // Input text color
                         '& .MuiInput-underline:before, .MuiInput-underline:hover:not(.Mui-disabled):before': {
                             borderBottom: 'none'
                         },
                     }}
-                >
-                    <MenuItem value="">
-                        <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={10}>Ten</MenuItem>
-                    <MenuItem value={20}>Twenty</MenuItem>
-                    <MenuItem value={30}>Thirty</MenuItem>
-                    <MenuItem value={40}>Thirty</MenuItem>
-                </Select>
+                />
             </FormControl>
         </Box>
     );

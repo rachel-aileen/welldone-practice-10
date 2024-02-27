@@ -13,7 +13,7 @@ export default function Navbar() {
 
     return (
         <div className='navbar'>
-            <a className='logo' href="#">Rodarte</a>
+            <a className='logo' href="#">Welldone</a>
 
             <div className='navigation'>
 
