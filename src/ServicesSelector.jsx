@@ -8,7 +8,7 @@ export default function ServicesSelector() {
     const [selectedServices, setSelectedServices] = React.useState({
         service1: false,
         service2: false,
-        service3: false, // Correct initialization
+        service3: false,
     });
 
     const handleChange = (event) => {
@@ -16,8 +16,15 @@ export default function ServicesSelector() {
     };
 
     const pinkColor = '#E03D5A';
-    const whiteColor = '#F6F2F2;';
-    const yellowColor = '#F2FEDC;;';
+    const whiteColor = '#F6F2F2';
+    const yellowColor = '#F2FEDC';
+
+    const checkboxLabelStyles = {
+        fontSize: 'clamp(1rem, 6vw, 1.3rem)',
+        fontFamily: "'Nunito Sans', sans-serif",
+        fontWeight: 300,
+        color: whiteColor, // Set the text color
+    };
 
     return (
         <Box sx={{
@@ -33,7 +40,7 @@ export default function ServicesSelector() {
                     disableAnimation
                     id="demo-simple-select-standard-label"
                     sx={{
-                        color: yellowColor, // Keep original color for this text
+                        color: yellowColor,
                         '&.Mui-focused': {
                             color: yellowColor,
                         },
@@ -51,7 +58,7 @@ export default function ServicesSelector() {
                         <Typography className='inputLabel'>Select any additional services you'd like:</Typography>
                     </Stack>
                 </InputLabel>
-                {/* Here we add the checkboxes with pink color */}
+                {/* Here we add the checkboxes with white color and custom label styles */}
                 <FormControlLabel
                     control={
                         <Checkbox
@@ -61,8 +68,8 @@ export default function ServicesSelector() {
                             sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
                         />
                     }
-                    label="Checkbox 1"
-                    sx={{ '& .MuiFormControlLabel-label': { color: whiteColor } }}
+                    label="Get it below. Please note this is"
+                    sx={{ '& .MuiFormControlLabel-label': checkboxLabelStyles }}
                 />
                 <FormControlLabel
                     control={
@@ -73,8 +80,8 @@ export default function ServicesSelector() {
                             sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
                         />
                     }
-                    label="Checkbox 2"
-                    sx={{ '& .MuiFormControlLabel-label': { color: whiteColor } }}
+                    label="Copywriting"
+                    sx={{ '& .MuiFormControlLabel-label': checkboxLabelStyles }}
                 />
                 <FormControlLabel
                     control={
@@ -85,8 +92,8 @@ export default function ServicesSelector() {
                             sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
                         />
                     }
-                    label="Checkbox 3"
-                    sx={{ '& .MuiFormControlLabel-label': { color: whiteColor } }}
+                    label="Logo Design"
+                    sx={{ '& .MuiFormControlLabel-label': checkboxLabelStyles }}
                 />
                 {/* Add more checkboxes as needed */}
             </FormControl>
