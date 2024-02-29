@@ -1,17 +1,19 @@
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField'; // Import TextField
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack, Typography, Checkbox, FormControlLabel } from '@mui/material'; // Import necessary components
 import { FilterVintage } from '@mui/icons-material';
 
 export default function ServicesSelector() {
-    const [age, setAge] = React.useState('');
+    const [selectedServices, setSelectedServices] = React.useState({
+        service1: false,
+        service2: false,
+        // Add more services as needed
+    });
 
     const handleChange = (event) => {
-        // Only allow digits to be inputted
-        const newValue = event.target.value.replace(/\D/g, '');
-        setAge(newValue);
+        // Update the state to reflect checkbox changes
+        setSelectedServices({ ...selectedServices, [event.target.name]: event.target.checked });
     };
 
     return (
@@ -48,53 +50,16 @@ export default function ServicesSelector() {
                         <Typography className='inputLabel'>Select any additional services you'd like:</Typography>
                     </Stack>
                 </InputLabel>
-                <TextField
-                    required
-                    type="text" // Changed this to text to better control the input with regex
-                    InputProps={{
-                        inputProps: { min: 1, step: 1 }, // Only allow whole numbers greater than zero
-                        disableUnderline: true, // Removes the underline
-                        style: {
-                            '&:hover': {
-                                borderColor: 'transparent', // Removes border on hover
-                            },
-                            '&:focus': {
-                                borderColor: 'transparent', // Removes border on focus
-                            },
-                            '&:after': {
-                                borderColor: 'transparent', // Removes border after (when active/focused)
-                            },
-                            '&:before': {
-                                borderColor: 'transparent', // Removes border before (initial state)
-                            },
-                        },
-                    }}
-                    id="number-of-pages"
-                    value={age}
-                    onChange={handleChange}
-                    sx={{
-                        '& .MuiInputBase-input': {
-                            color: '#F6F2F2', // Input text color
-                        },
-                        '& .MuiInput-underline:before, .MuiInput-underline:after': {
-                            borderBottom: 'none',
-                        },
-                        '& .MuiOutlinedInput-root': {
-                            '& fieldset': {
-                                borderColor: 'transparent', // Removes default border
-                            },
-                            '&:hover fieldset': {
-                                borderColor: 'transparent', // Removes border on hover
-                            },
-                            '&.Mui-focused fieldset': {
-                                borderColor: 'transparent', // Removes border on focus
-                            },
-                        },
-                    }}
+                {/* Here we add the checkboxes */}
+                <FormControlLabel
+                    control={<Checkbox checked={selectedServices.service1} onChange={handleChange} name="service1" />}
+                    label="Checkbox 1"
                 />
-
-
-
+                <FormControlLabel
+                    control={<Checkbox checked={selectedServices.service2} onChange={handleChange} name="service2" />}
+                    label="Checkbox 2"
+                />
+                {/* Add more checkboxes as needed */}
             </FormControl>
         </Box>
     );
