@@ -20,7 +20,7 @@ export default function ServicesSelector() {
         <Box sx={{
             m: 1,
             width: '100%',
-            borderBottom: '2px solid #F6F2F2;'
+            // borderBottom: '2px solid #F6F2F2;' // Comment out or remove this line
         }}
         >
             <FormControl variant="standard"
@@ -58,6 +58,10 @@ export default function ServicesSelector() {
                 <FormControlLabel
                     control={<Checkbox checked={selectedServices.service2} onChange={handleChange} name="service2" />}
                     label="Checkbox 2"
+                />
+                <FormControlLabel
+                    control={<Checkbox checked={selectedServices.service3} onChange={handleChange} name="service3" />} // Corrected the name from service2 to service3 for Checkbox 3
+                    label="Checkbox 3"
                 />
                 {/* Add more checkboxes as needed */}
             </FormControl>
