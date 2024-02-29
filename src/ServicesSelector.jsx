@@ -1,28 +1,29 @@
 import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import FormControl from '@mui/material/FormControl';
-import { Box, Stack, Typography, Checkbox, FormControlLabel } from '@mui/material'; // Import necessary components
+import { Box, Stack, Typography, Checkbox, FormControlLabel } from '@mui/material';
 import { FilterVintage } from '@mui/icons-material';
 
 export default function ServicesSelector() {
     const [selectedServices, setSelectedServices] = React.useState({
         service1: false,
         service2: false,
-        // Add more services as needed
+        service3: false, // Correct initialization
     });
 
     const handleChange = (event) => {
-        // Update the state to reflect checkbox changes
         setSelectedServices({ ...selectedServices, [event.target.name]: event.target.checked });
     };
+
+    const pinkColor = '#E03D5A';
+    const whiteColor = '#F6F2F2;';
+    const yellowColor = '#F2FEDC;;';
 
     return (
         <Box sx={{
             m: 1,
             width: '100%',
-            // borderBottom: '2px solid #F6F2F2;' // Comment out or remove this line
-        }}
-        >
+        }}>
             <FormControl variant="standard"
                 sx={{
                     width: '100%',
@@ -32,12 +33,12 @@ export default function ServicesSelector() {
                     disableAnimation
                     id="demo-simple-select-standard-label"
                     sx={{
-                        color: '#F2FEDC', // Ensure color applies at all times
+                        color: yellowColor, // Keep original color for this text
                         '&.Mui-focused': {
-                            color: '#F2FEDC', // Ensure color remains pink when focused
+                            color: yellowColor,
                         },
-                        position: 'relative', // Adjusted to keep label fixed
-                        transform: 'none', // Prevents animation
+                        position: 'relative',
+                        transform: 'none',
                     }}
                 >
                     <Stack
@@ -46,22 +47,46 @@ export default function ServicesSelector() {
                         alignItems="center"
                         spacing={2}
                     >
-                        <FilterVintage sx={{ color: '#E03D5A' }} />
+                        <FilterVintage sx={{ color: pinkColor }} />
                         <Typography className='inputLabel'>Select any additional services you'd like:</Typography>
                     </Stack>
                 </InputLabel>
-                {/* Here we add the checkboxes */}
+                {/* Here we add the checkboxes with pink color */}
                 <FormControlLabel
-                    control={<Checkbox checked={selectedServices.service1} onChange={handleChange} name="service1" />}
+                    control={
+                        <Checkbox
+                            checked={selectedServices.service1}
+                            onChange={handleChange}
+                            name="service1"
+                            sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
+                        />
+                    }
                     label="Checkbox 1"
+                    sx={{ '& .MuiFormControlLabel-label': { color: whiteColor } }}
                 />
                 <FormControlLabel
-                    control={<Checkbox checked={selectedServices.service2} onChange={handleChange} name="service2" />}
+                    control={
+                        <Checkbox
+                            checked={selectedServices.service2}
+                            onChange={handleChange}
+                            name="service2"
+                            sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
+                        />
+                    }
                     label="Checkbox 2"
+                    sx={{ '& .MuiFormControlLabel-label': { color: whiteColor } }}
                 />
                 <FormControlLabel
-                    control={<Checkbox checked={selectedServices.service3} onChange={handleChange} name="service3" />} // Corrected the name from service2 to service3 for Checkbox 3
+                    control={
+                        <Checkbox
+                            checked={selectedServices.service3}
+                            onChange={handleChange}
+                            name="service3"
+                            sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
+                        />
+                    }
                     label="Checkbox 3"
+                    sx={{ '& .MuiFormControlLabel-label': { color: whiteColor } }}
                 />
                 {/* Add more checkboxes as needed */}
             </FormControl>
