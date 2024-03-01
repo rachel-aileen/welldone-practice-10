@@ -49,7 +49,7 @@ export default function PageSelector() {
                         spacing={2}
                     >
                         <FilterVintage sx={{ color: '#E03D5A' }} />
-                        <Typography className='inputLabel'>Approximately how many pages will your website have?</Typography>
+                        <Typography className='inputLabel'>Approximately many pages will your website have?</Typography>
                     </Stack>
                 </InputLabel>
                 <TextField

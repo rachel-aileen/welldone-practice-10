@@ -93,7 +93,10 @@ export default function ServicesSelector() {
                         />
                     }
                     label="Logo Design"
-                    sx={{ '& .MuiFormControlLabel-label': checkboxLabelStyles }}
+                    sx={{
+                        '& .MuiFormControlLabel-label': checkboxLabelStyles,
+                        marginBottom: '10%' // Add margin bottom only to this label
+                    }}
                 />
                 {/* Add more checkboxes as needed */}
             </FormControl>
