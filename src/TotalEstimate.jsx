@@ -16,7 +16,7 @@ export default function TotalEstimate() {
                 borderRadius: '0',
                 display: 'flex',
                 alignItems: 'center',
-                height: '6%',
+                height: '5%',
             }}
         >
             <Typography
