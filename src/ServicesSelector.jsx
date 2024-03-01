@@ -20,7 +20,7 @@ export default function ServicesSelector() {
     const yellowColor = '#F2FEDC';
 
     const checkboxLabelStyles = {
-        fontSize: 'clamp(1rem, 6vw, 1.3rem)',
+        fontSize: 'clamp(1.2rem, 6vw, 1.2rem)',
         fontFamily: "'Nunito Sans', sans-serif",
         fontWeight: 300,
         color: whiteColor, // Set the text color
@@ -68,7 +68,7 @@ export default function ServicesSelector() {
                             sx={{ color: whiteColor, '&.Mui-checked': { color: whiteColor } }}
                         />
                     }
-                    label="Get it below. Please note this is"
+                    label="Branding"
                     sx={{ '& .MuiFormControlLabel-label': checkboxLabelStyles }}
                 />
                 <FormControlLabel
